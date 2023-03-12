@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import Form from './Component/form';
 
 function App() {
   return (
-    <h1>Hello  how</h1>
+    <Form />
   );
 }
 
