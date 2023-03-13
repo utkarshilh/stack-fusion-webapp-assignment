@@ -1,10 +1,10 @@
-# Getting Started with Create React App
+# Company Placement Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a placement assignment for stackfusion. 
 
-## Available Scripts
+## Demo Video
 
-In the project directory, you can run:
+[Click Here ](https://drive.google.com/file/d/10XIzVe6fAkVBvhN7OZL80XkVHJZV171G/view?usp=share_link)
 
 ### `npm start`
 
