@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import Form from './Component/form';
 import React, { useState } from 'react';
-import List from './Component/list';
+import List from './Component/List';
+
 
 
 
@@ -19,6 +20,8 @@ function App() {
   // return ((formState) ? (<A changeStatus={changeComponent} />) : (<B />))
 
   return ((formState) ? (<Form changeComponent={changeComponent} />) : (<List />));
+
+
 
 }
 
