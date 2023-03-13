@@ -31,6 +31,7 @@ const List = () => {
 
             <div className="card-container">
                 {users.map((users) => (
+
                     <div>
                         <div className="card" >
                             <h3>{users.name}</h3>
