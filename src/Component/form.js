@@ -1,74 +1,20 @@
 
 
-// import React, { useState } from 'react';
-// import './form.css'
-
-// function Form() {
-//     const [name, setName] = useState('');
-//     const [email, setEmail] = useState('');
-//     const [dob, setDob] = useState('');
-//     const [phone, setPhone] = useState('');
-
-//     const handleSubmit = (event) => {
-//         event.preventDefault();
-//         // perform validation and submit form
-//     }
-
-//     return (
-//         <form onSubmit={handleSubmit} className="form-container">
-//             <label htmlFor="name">Name:</label>
-//             <input
-//                 type="text"
-//                 id="name"
-//                 value={name}
-//                 onChange={(event) => setName(event.target.value)}
-//                 required
-//             />
-
-//             <label htmlFor="dob">Date of Birth:</label>
-//             <input
-//                 type="date"
-//                 id="dob"
-//                 value={dob}
-//                 onChange={(event) => setDob(event.target.value)}
-//                 required
-//             />
-
-//             <label htmlFor="email">Email:</label>
-//             <input
-//                 type="email"
-//                 id="email"
-//                 value={email}
-//                 onChange={(event) => setEmail(event.target.value)}
-//                 required
-//             />
-
-//             <label htmlFor="phone">Phone Number:</label>
-//             <input
-//                 type="tel"
-//                 id="phone"
-//                 value={phone}
-//                 onChange={(event) => setPhone(event.target.value)}
-//                 required
-//             />
-
-//             <button type="submit">Submit</button>
-//         </form>
-//     );
-// }
-
-// export default Form;
-
-
 import React, { useState } from 'react';
 import './form.css'
 
-function Form() {
+
+import Axios from "axios"
+
+function Form(props) {
     const [name, setName] = useState('');
     const [dob, setDob] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [age, setAge] = useState('');
+
+
+
 
     //function to change the name of the user everytime 
     const handleNameChange = (e) => {
@@ -127,20 +73,22 @@ function Form() {
         }
 
 
+        Axios.post("http://localhost:3001/api/insertUser", {
+            uname: name,
+            udob: dob,
+            uemail: email,
+            uphone: phone
 
+        }).then((response) => {
+            if (response.data.status == "fail")
+                alert(response.data.message)
+            else {
+                props.changeComponent();
 
-        console.log("this section is prevented from execution")
+                alert(response.data.message);
+            }
 
-
-
-
-
-
-
-
-        console.log(name, dob, email, phone);
-
-
+        });
     }
 
     return (
